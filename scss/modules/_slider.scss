@@ -1,0 +1,236 @@
+// --------------------------------------------------------------------------------
+// Slider
+// --------------------------------------------------------------------------------
+// ----------------------------------------------------------
+// Generales Sliders
+// ----------------------------------------------------------
+.bxslider {
+  @include bp(xs) {
+    left: 0 !important;
+    // margin-right: auto;
+  }
+}
+
+.bx-wrapper {
+  width: 100%;
+  height: auto !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent;
+
+  img {
+    width: 100% !important;
+    object-fit: cover;
+  }
+}
+
+// ----------------------------------------------------------
+// Tools SLIDER
+// ----------------------------------------------------------
+#herramientas {
+
+  padding-top: rem($gutter * 2);
+  padding-bottom: rem($gutter * 4);
+
+  .container-elemento {
+    overflow: visible;
+  }
+  .bx-wrapper {
+
+    max-width: 100%;
+    max-height: rem(550);
+    overflow: visible;
+    margin-bottom: rem($gutter);
+
+    @include bp(xl) {
+      max-height: rem(680);
+    }
+
+    @include bp($screen-sm, $screen-md) {
+      margin-bottom: rem($gutter*1.5);
+      height: auto;
+      max-height: rem(400);
+    }
+
+    @include bp(xs) {
+      margin-bottom: rem($gutter*1.5);
+      height: auto;
+      max-height: rem(500);
+    }
+
+    .bx-viewport {
+      height: auto;
+    }
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      max-height: rem(600);
+      height: auto;
+
+      @include bp(xs) {
+        max-height: rem(300);
+      }
+    }
+
+    li {
+      min-height: 500px;
+      display: flex;
+    }
+
+    //     margin-bottom: 0;
+
+    //     @include bp(sm) {
+    //       margin-bottom: rem($gutter);
+    //     }
+
+    //     .bx-viewport,
+    //     .bxslider {
+    //       display: flex;
+    //       // justify-content: center;
+    //       justify-content: flex-start;
+    //       align-items: flex-start;
+
+    //       @include bp(sm) {
+    //         align-items: center;
+    //       }
+    //     }
+
+    //     img {
+    //       width: 100% !important;
+    //       object-fit: contain;
+
+    //       @include bp(md) {
+    //         height: 100%;
+    //         object-fit: contain;
+
+    //       }
+    //     }
+
+    //     // Arrow
+    //     // ----------------------------------------------------------
+        .bx-controls {
+          .bx-controls-direction {
+            a {
+              width: rem(400);
+              height: rem(200);
+
+              @include bp($screen-sm, $screen-md) {
+                top: 112%;
+                left: 35%;
+              }
+
+              @include bp(xs) {
+                top: 85%;
+                left: 30%;
+                transform: scale(0.2);
+              }
+
+              @media (max-width: 320px) {
+                left: 20%;
+              }
+            }
+
+            .bx-prev {
+              background: none;
+              @include bp($screen-sm, $screen-md) {
+                display: none;
+              }
+              @include bp(xs) {
+                display: none;
+              }
+            }
+
+            .bx-next {
+              background: url(../images/arrow-next.png);
+              z-index: 1;
+              background-repeat: no-repeat;
+
+
+              @include bp($screen-sm, $screen-md) {
+                transform: scale(0.5) translate(70%, 0);
+              }
+
+              @include bp(md) {
+                transform: scale(0.5) translate(rem(300), rem(280));
+              }
+            }
+          }
+        }
+  }
+
+}
+
+// ----------------------------------------------------------
+// Proyectos SLIDER
+// ----------------------------------------------------------
+.modal {
+
+  // Tamaños generales
+  // ----------------------------------------------------------
+  .bx-wrapper,
+  .bx-viewport,
+  .bxslider2,
+  ul li {
+    width: 100% !important;
+    height: rem(200);
+
+    @include bp(md) {
+      min-height: rem(500) !important;
+    }
+
+    img {
+      min-height: rem(280);
+    }
+  }
+
+  .bx-viewport ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .bx-wrapper {
+    padding: 0;
+    margin: 0;
+
+    .bx-next {
+      right: 0;
+    }
+
+    .bx-prev {
+      left: 0;
+    }
+
+    // Arrows
+    // ----------------------------------------------------------
+    .bx-controls {
+      .bx-controls-direction {
+        a {
+          top: 90%;
+          margin: 0;
+
+          @include bp(sm) {
+            top: 100%;
+          }
+        }
+      }
+
+      // Bullets
+      // ----------------------------------------------------------
+      .bx-pager {
+        transform: translateY(rem(-15));
+
+        .bx-pager-item {
+          a {
+            transform: scale(0.6);
+            background: $secondary-color;
+
+            &.active {
+              background: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

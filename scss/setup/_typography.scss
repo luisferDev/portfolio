@@ -1,0 +1,264 @@
+// --------------------------------------------------------------------------
+// TYPOGRAPHY
+// ----------------------------------------------------------------------------
+html {
+    background: white;
+    color: black;
+    font-family: $main-font;
+    font-weight: 400;
+    font-size: percentage($browser-context/17);
+    line-height: calc(27/#{$browser-context});
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $main-font;
+    color: $txt-color;
+    font-size: rem(15);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: rem(0.5);
+
+    @include bp(sm) {
+        font-size: rem(20);
+    }
+}
+
+
+%h {
+    margin: 0 0 rem(10);
+    font-weight: 600;
+    line-height: 1.2;
+    font-family: $hero-font;
+    letter-spacing: none;
+}
+
+%h1 {
+    font-size: rem(32);
+
+    @include bp(md) {
+        font-size: rem(60);
+    }
+
+}
+
+%h2 {
+    font-size: rem(32);
+
+    @include bp(md) {
+        font-size: rem(50);
+    }
+
+}
+
+%h3 {
+    font-size: rem(28);
+
+    @include bp(md) {
+        font-size: rem(40);
+    }
+}
+
+%h4 {
+    font-size: rem(20);
+
+    @include bp(md) {
+        font-size: rem(24);
+    }
+
+}
+
+%h5 {
+    font-size: rem(18);
+
+    @include bp(md) {
+        font-size: rem(20);
+    }
+}
+
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    @extend %h;
+}
+
+h1,
+.h1 {
+    @extend %h1;
+    color: $white;
+}
+
+h2,
+.h2 {
+    @extend %h2;
+}
+
+h3,
+.h3 {
+    @extend %h3;
+}
+
+h4,
+.h4 {
+    @extend %h4;
+}
+
+h5,
+.h5 {
+    @extend %h5;
+}
+
+p,
+ol,
+ul {
+    margin: 0 0 rem(24);
+}
+
+
+ol,
+ul {
+    margin-left: rem($gutter);
+    padding: 0;
+}
+
+a {
+    color: $txt-color;
+    font-weight: 400;
+    transition: all $animation-fade;
+
+    .elementor & {
+        text-decoration: underline;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $primary-color;
+        cursor: pointer;
+    }
+}
+
+strong {
+    font-weight: bolder;
+}
+
+em {
+    font-style: italic;
+}
+
+small {
+    font-size: rem(17);
+}
+
+// Clases de typo
+// ----------------------------------------------------------
+.big {
+    font-size: rem(40);
+    margin-bottom: rem(15);
+
+    @include bp($screen-sm, $screen-md) {
+        font-size: rem(60);
+    }
+
+    @include bp(md) {
+        font-size: rem(80);
+    }
+}
+
+.p {
+    font-size: rem(18);
+    font-family: $main-font;
+    font-weight: 400;
+}
+
+.muted {
+    font-weight: 200;
+}
+
+.not {
+    text-decoration: underline;
+    text-decoration-line: line-through;
+}
+
+.subtitle {
+    font-size: rem(18);
+    font-weight: 600;
+
+    @include bp(sm) {
+        font-size: rem(20);
+    }
+}
+
+.small {
+    font-size: rem(15);
+}
+
+.skinny {
+    font-weight: 300;
+}
+
+span {
+    &.accent-line {
+        display: inline-block;
+        white-space: nowrap;
+        width: max-content;
+        position: relative;
+        z-index: 1;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: rem(3);
+            z-index: -1;
+            position: absolute;
+            bottom: rem(3);
+            background: $gradient;
+        }
+    }
+}
+
+.accent-color--first,
+.accent-color--first * {
+    color: $primary-color !important;
+    font-weight: 600;
+}
+
+.accent-color--second,
+.accent-color--second * {
+    color: $secondary-color !important;
+    font-weight: 600;
+}
+
+.txt-supra {
+    color: $grey;
+    font-weight: 700;
+    font-size: rem(16);
+    letter-spacing: rem(2);
+    padding-top: rem($gutter * 1.5);
+}
+
+.it-txt {
+    font-family: 'monospace', monospace;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+// Estilos para Styleguide
+// ----------------------------------------
+// code {
+//     font-family: 'monospace',monospace;
+//     text-decoration: none;
+//     font-weight: 600;
+// }

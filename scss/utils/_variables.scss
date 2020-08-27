@@ -1,0 +1,117 @@
+//
+// Variables
+// ----------------------------------------------------------------------------
+
+// Color Palette
+// ----------------------------------------------------------------------------
+$blue: #343BA6;
+$purple: #141463;
+$black: #262b2b;
+$white: #ffffff;
+$aquamarine: #00cccc;
+$magenta: #DC01A4;
+$magenta-light: #b05151;
+$grey-darker: #262626;
+$grey-dark: #444444;
+$grey: #9c9b9b;
+$grey-light: #adb5bd;
+$grey-lighter: #dedada;
+$grey-lightest: #f4f4f4;
+$white: #fff;
+$orange: #ff5600;
+$olive-light: #a0b7af;
+$olive: #99aea7;
+
+// SET Primary
+// ------------------------------------------------------------------------
+$primary-color: $magenta-light;
+$secondary-color: $olive-light;
+$txt-color: $black;
+$gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 15%, rgba(255, 255, 255, 1) 100%);
+
+// Shadows
+// -------------------------------------------------------------------------
+$text-shadow: 0 1px 3px rgba(black, 0.15);
+$box-shadow: 0 0 10px 0 rgba(black, 0.15);
+$button-shadow: 0px 5px 5px rgba(black, 0.15);
+$box-shadow-bottom: 0 5px 5px -5px rgba($black, 0.4);
+
+// HOVER ME | PORTFOLIO
+// ------------------------------------------------
+$colorPrimary: $olive-light;
+$colorSecondary: $magenta-light;
+$cubic-bezier:cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// Typography
+// ----------------------------------------------------------------------------
+$main-font: 'Open Sans', sans-serif;
+$browser-context: 18;
+$hero-font: 'Nothing You Could Do', cursive;
+$subs-font: 'Pontano Sans', sans-serif;
+$font-alt: 'Amatic SC', cursive;
+$txt-reverse: $white;
+
+// Transitions
+// ----------------------------------------------------------------------------
+$animation-fade: 0.2s linear;
+$animation-move: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+$animation-fade--slow: 0.8s ease-in;
+$animation-move--slow: 0.6s cubic-bezier(0.694, 0.0482, 0.335, 1);
+$animation-cta-unnax: 0.5s cubic-bezier(1, 0.22, 1, 0.19);
+
+// Layout
+// ----------------------------------------------------------------------------
+$gutter: 20;
+$gutter-extra: 70;
+$content-width: 1180;
+$fixed-header-height: 66;
+$cpt-grid-gutter: 50;
+
+// Responsive breakpoints
+// ------------------------------------------------
+$screen-xs: 480;
+$screen-sm: 768;
+$screen-md: 1024;
+$screen-lg: 1200;
+$screen-xl: 1600;
+$screen-wide: 1920;
+$screen-xs-max: $screen-sm - 1;
+$screen-sm-max: $screen-md - 1;
+$screen-md-max: $screen-lg - 1;
+$screen-lg-max: $screen-xl - 1;
+$header-mobile-max: $screen-md-max;
+$header-desktop: $screen-lg;
+$mobileLandscape: "only screen and (min-device-width: 320px) and (max-device-width: 823px) and (-webkit-max-device-pixel-ratio: 3) and (orientation: landscape)";
+
+// Layers index map
+// ------------------------------------------------
+$z-layers: (top: 9001,
+    high: 8001,
+    over: 7001,
+    default: 1,
+    below: -1,
+    bottom: -9999);
+
+// Buttons
+// ------------------------------------------------
+$btn-primary-color: $primary-color;
+$btn-secondary-color: $secondary-color;
+$btn-dark-color: $grey-darker;
+// $btn-light-color: $light-color;
+// $btn-dark-color: $dark-color;
+
+
+//responsive
+// ------------------------------------------------
+$phone: '(max-width: 480px)';
+$tablet-portrait: '(max-width: 767px)';
+$tablet-landscape: '(min-width: 768px) and (max-width: 979px)';
+$large-desktop: '(min-width: 1200px)';
+$non-retina: 'screen and (-webkit-max-device-pixel-ratio: 1)';
+$retina: '(min--moz-device-pixel-ratio: 1.5), 
+(-o-min-device-pixel-ratio: 3/2),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi),
+(min-resolution: 1.5dppx)';
+

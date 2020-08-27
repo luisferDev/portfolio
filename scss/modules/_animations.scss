@@ -1,0 +1,203 @@
+// --------------------------------------------------------------------------------
+// Animaciones específicas
+// --------------------------------------------------------------------------------
+// CTA Dinámico "Conoce mi Perfil"
+// ----------------------------------------------------------
+
+.hero__scroll {
+
+    position: relative;
+    color: $white !important;
+    bottom: rem(-10);
+
+    @include bp(md) {
+        bottom: rem(-60);
+    }
+
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    padding-bottom: rem($gutter * 2);
+    left: 0;
+    right: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    transition: all .5s;
+
+    &:hover {
+        transform: scale(0.95);
+    }
+}
+
+.scroll-down {
+    position: absolute;
+    left: 49%;
+    bottom: rem(10);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0;
+    width: rem(20);
+    height: rem(20);
+    border-bottom: rem(5) solid $white;
+    border-right: rem(5) solid $white;
+    transform: translate(-50%, 0%) rotate(45deg);
+    animation: fade_move_down 2s ease-in-out infinite;
+}
+
+
+// ANIMACIÓN DE APARICIÓN GENERAL
+//----------------------------------------
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    // animation-delay: 1s;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// ANIMACIÓN DE APARICIÓN solo de el hero header
+//----------------------------------------------------------------
+
+body {
+    @extend .fadeIn;
+}
+
+.hero-box.fadeIn {
+    animation-delay: 1s;
+}
+
+.fadeScroll {
+    -webkit-animation: animat_show 0.8s;
+    animation: animat_show 0.8s;
+    visibility: visible !important;
+}
+
+@keyframes animat_show {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+// Animated scroll arrow animation
+//----------------------------------------------------------------
+@keyframes fade_move_down {
+    0% {
+        transform: translate(0, -10px) rotate(45deg);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 10px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+// HOVER ME | PORTFOLIO
+// ------------------------------------------------
+
+//split button mixin
+// @mixin btnportfolio__split($foregroundColor, $backgroundColor, $textColor) {
+// 	.btnportfolio {
+// 		//display: block;
+// 		position: relative;
+// 		letter-spacing: 0.15em;
+// 		margin: 0 auto;
+// 		padding: rem($gutter*1.5) rem($gutter * 2);
+// 		background: transparent;
+// 		outline: none;
+// 		font-size: rem(28);
+// 		color: $textColor;
+// 		transition: all 0.5s $cubic-bezier 0.15s;
+// 		&::after,
+// 		&::before {
+// 			content: "";
+// 			position: absolute;
+//             height: rem(50);
+// 			width: rem(50);
+// 			transition: all 0.5s $cubic-bezier;
+// 			z-index: -2;
+// 			border-radius: 50%;
+// 		}
+// 		&::before {
+// 			background-color: $backgroundColor;
+// 			top: rem(3);
+// 			left: rem(3);
+// 			animation: top 2s $cubic-bezier 0.25s infinite alternate;
+
+// 		}
+// 		&::after {
+// 			background-color: $foregroundColor;
+// 			top: 3rem;
+// 			left: 13rem;
+// 			animation: bottom 2s $cubic-bezier 0.5s infinite alternate;
+// 		}
+// 		&:hover {
+// 			color: white;
+// 			&::before,
+// 			&::after {
+// 				top: 0;
+// 				//transform: skewx(-10deg);
+// 				height: 100%;
+// 				width: 100%;
+// 				border-radius: rem(7);
+// 				animation: none;				
+// 			}
+// 			&::after {
+// 				left: 0rem;
+// 			}
+// 			&::before {
+// 				top: 0.5rem;
+// 				left: 0.35rem;
+// 				box-shadow: rem(1) rem(3) rem(20) rem(3) rgba(0, 0, 0, 0.2);
+// 			}
+// 		}
+// 	}
+// }
+
+// @keyframes top{
+// 	from{
+// 		transform: translate(0rem, 0);
+// 	}
+// 	to {
+// 		transform: translate(0rem, 3.5rem);
+// 	}
+// }
+// @keyframes bottom{
+// 	from{
+// 		transform: translate(-11.5rem, 0);
+// 	}
+// 	to{
+// 		transform: translate(0rem, 0);
+// 	}
+// }
+
+// @include btnportfolio__split($colorPrimary, $colorSecondary, $black);

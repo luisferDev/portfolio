@@ -1,0 +1,461 @@
+// --------------------------------------------------------------------------------
+// SECTIONS
+// --------------------------------------------------------------------------------
+// Section Hero Header
+// ------------------------------------------------------------------------------
+
+#intro {
+    &.hero-header {
+        overflow-x: hidden;
+        background-color: $primary-color;
+
+        // Caja del contenido 
+        // ----------------------------------------------------------
+        .hero-box {
+            display: flex;
+            align-items: flex-end;
+            width: 100vw;
+            height: 100vh;
+            transition: $animation-fade--slow;
+            background-image: url('../images/profile-silueta-color-mob.png');
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            background-size: rem(550);
+
+            @include bp($screen-sm, $screen-md) {
+                background-image: url('../images/profile-silueta-color-tablet.png');
+                background-size: 160%;
+            }
+
+            @include bp(md) {
+                align-items: center;
+                background-image: url('../images/profile-silueta-color.png');
+                background-position: bottom 0 right 20%;
+                background-size: 72vh;
+            }
+
+            @include mq("mobile-landscape"){
+                background-image: url('../images/profile-silueta-color-mob.png');
+                background-size: 80%;
+                background-position: 150% top;
+            }
+
+
+
+            // Contenedor del Copy + CTA
+            // ----------------------------------------------------------
+            &--content {
+
+                height: auto;
+                text-align: center;
+                padding-bottom: rem($gutter*2);
+
+                @include bp(md) {
+                    margin-top: calc(100% - 95%);
+                    margin-right: calc(100% - 50%);
+                }
+
+                @include bp(xl) {
+                    margin-top: calc(100% - 95%);
+                    margin-right: calc(100% - 70%);
+                }
+
+                @include mq("mobile-landscape"){
+                    margin-left: rem(-220);
+                }
+
+                // Hero Title
+                // ----------------------------------------------------------
+                &_description {
+
+                    h1,
+                    h2,
+                    h3,
+                    a {
+                        color: $white;
+                    }
+
+                    span:not(.big) {
+                        display: block;
+                        font-weight: 300;
+
+                        @include bp(sm) {
+                            font-size: rem(45);
+                        }
+
+                        @media (max-width: 320px) {
+                            transform: scale(0.7);
+                            line-height: 0.8;
+                        }
+                    }
+                }
+
+                // CTA Dinámico "Conoce mi Perfil"
+                // ----------------------------------------------------------
+
+                .more-box {
+                    text-align: center;
+
+                    a {
+                        font-weight: 300;
+                        font-size: rem(16);
+                        letter-spacing: rem(2.5);
+                        text-decoration: none;
+                    }
+
+                    span {
+                        display: block;
+                    }
+                }
+            }
+
+            .container-elemento {
+                overflow: visible;
+
+                @media (max-width: 320px) {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+// ------------------------------------------------------------------------------
+// Section About 30/70
+// ------------------------------------------------------------------------------
+
+#objetivo {
+    &.turn {
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include bp($screen-sm, $screen-md) {
+            min-height: 60vh;
+        }
+
+        .container-elemento {
+            z-index: 1;
+
+            @include bp($screen-sm, $screen-md) {
+                padding-right: rem($gutter * 4);
+                padding-left: rem($gutter * 4);
+            }
+        }
+
+        // Detalles de la Caja + JS
+        // -------------------------------------------------------
+        &>div:not(.container-elemento) {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+
+            @include bp($screen-sm, $screen-md) {
+                background-size: 300%;
+                background-position: top 60% left 17%;
+            }
+
+            @include bp(md) {
+                background-position: top 30% left;
+            }
+
+            // Background image de lámpara apagada
+            // ----------------------------------------------------------
+            &.off {
+                background-image: url(../images/luis-marin-about-lamp-off.jpg);
+                opacity: 1;
+
+                @include bp(xs) {
+                    background-image: url(../images/luis-marin-about-lamp-off-mob.jpg);
+                    background-position: center;
+                    opacity: 1;
+                }
+
+                @include mq("mobile-landscape"){
+                    background-image: url(../images/luis-marin-about-lamp-on-mob.jpg);
+                }
+            }
+
+            // Background image de lámpara iluminada
+            // ----------------------------------------------------------
+            &.on {
+                background-image: url(../images/luis-marin-about-lamp-on.jpg);
+                opacity: 0;
+
+                @include bp(xs) {
+                    background-image: url(../images/luis-marin-about-lamp-on-mob.jpg);
+                    background-position: center;
+                    opacity: 0;
+                }
+
+                @include mq("mobile-landscape"){
+                    opacity: 1;
+                }
+            }
+        }
+
+        // Section Alinieación bottom
+        // ----------------------------------------------------------
+        .st-wrap-50 {
+            justify-content: flex-start;
+
+            @include bp(xs) {
+                margin-top: rem($gutter*2);
+                padding-bottom: rem($gutter*1.5);
+            }
+
+            .col {
+                @include bp($screen-sm, $screen-md) {
+                    width: 100%;
+                }
+            }
+
+            // Contenido de Objetivo
+            // ----------------------------------------------------------
+            .col-title {
+                text-align: center;
+                padding-top: rem($gutter * 2);
+                padding-bottom: rem($gutter * 2);
+
+                @include bp(xl) {}
+
+                h2 {
+                    width: 50%;
+                    text-align: left;
+                    margin-left: calc(100% - 83%);
+
+                    @include bp(xl) {
+                        text-align: left;
+                        margin-top: rem($gutter * 4);
+                    }
+
+                    @include bp(xs) {
+                        text-align: center;
+                    }
+                }
+
+                q {
+                    @extend .subtitle;
+                    display: block;
+
+                    @include bp(sm) {
+                        margin-left: rem(10);
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+// ------------------------------------------------------------------------------
+// SECTION SKILLS
+// ------------------------------------------------------------------------------
+#skills {
+    &.myskills {
+
+        text-align: center;
+        height: auto;
+
+
+        @include bp(xs) {
+            min-height: rem(700);
+            padding-top: rem($gutter *1.5);
+        }
+
+        .col {
+            display: flex;
+            flex-flow: column nowrap;
+            height: auto;
+
+            figure {
+                img {
+                    width: 60%;
+                    opacity: 0.8;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin: auto;
+                }
+            }
+
+            .myskills-title {
+
+                h3 {
+                    margin-bottom: 0;
+                }
+
+                @include bp(sm) {
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    min-height: rem(120);
+                    height: auto;
+                }
+
+                @include bp(xl) {
+                    min-height: rem(80);
+                }
+            }
+        }
+    }
+}
+
+// ------------------------------------------------------------------------------
+// SECTION TOOLS
+// ------------------------------------------------------------------------------
+
+#herramientas {
+
+    &.mytools {
+
+        position: relative;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 5%, rgba(244, 244, 244, 1) 100%);
+
+        @include bp(md) {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        @include bp($screen-sm, $screen-md) {
+            padding-top: rem($gutter * 5);
+        }
+
+        .last {
+            text-align: center;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .col-txt {
+
+            padding-top: rem($gutter*1.5);
+
+            @include bp($screen-sm, $screen-md) {
+                text-align: center;
+            }
+        }
+
+
+        [class^='st-wrap'] {
+
+            // Tamaño Mobile de la IMG COVER del Slider
+            // ----------------------------------------------------------
+            #work-polaroid {
+                img {
+
+                    @include bp(sm) {
+                        transform: scale(0.65);
+                    }
+
+                    @include bp(xl) {
+                        transform: scale(0.9);
+                    }
+                }
+            }
+
+            // Ajustes móviles
+            // ----------------------------------------------------------
+            div {
+                @include bp(xs) {
+                    .col {
+
+                        &:nth-child(1) {
+                            img {
+                                max-height: rem(300);
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        &.col-content {
+                            padding-top: rem($gutter * 1.5);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Anulo padding Section > top-column
+        // --------------------------------------------------------------
+        .st-wrap {
+            padding-bottom: 0;
+        }
+
+    }
+}
+
+
+// ------------------------------------------------------------------------------
+// SECTION PORTFOLIO
+// ------------------------------------------------------------------------------
+
+#trabajos {
+
+    @include bp(xl) {
+        margin-bottom: rem($gutter * 4);
+    }
+
+    &.prototypes {
+
+        padding-top: rem($gutter * 2);
+        padding-bottom: rem($gutter * 2);
+
+        @include bp($screen-sm, $screen-md) {
+            padding-top: rem($gutter * 4);
+            padding-bottom: rem($gutter * 4);
+        }
+
+        @include bp(xl) {
+            padding-top: rem($gutter * 4);
+            padding-bottom: rem($gutter * 4);
+        }
+
+        // Section Portfolio CTA
+        // --------------------------------------------------------------
+        .st-wrap-50 {
+            .col {
+                @include bp($screen-sm, $screen-md) {
+                    width: 100%;
+
+                    &:nth-child(2) {
+                        width: 100%;
+
+                        .st-wrap-50 {
+                            width: 100%;
+                            display: flex;
+                            flex-flow: row wrap;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Caja individual top de la galería
+        // -------------------------------------------------------------- 
+        .st-wrap.single {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+            @include bp(md) {
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

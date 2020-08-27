@@ -1,0 +1,355 @@
+// ----------------------------------------------------------------------------
+// Ajustes GRID
+// ----------------------------------------------------------------------------
+%st-wrap {
+
+    width: 100%;
+
+    @include bp(md) {
+        display: flex;
+        flex-flow: row;
+        flex-grow: 1;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include bp($screen-sm, $screen-md) {
+        flex-flow: row wrap;
+    }
+
+    &-25 {
+        @extend %st-wrap;
+
+        @include bp(sm) {
+            display: flex;
+        }
+
+        .col {
+
+            @include bp(xs) {
+                width: 100%;
+            }
+
+            
+
+            @include bp($screen-sm, $screen-md) {
+                width: 45%;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+            }
+
+            @include bp(md) {
+
+                &:nth-child(1) {
+                    width: 22.5%;
+                    padding-right: rem($gutter/2);
+                }
+
+                &:nth-child(2) {
+                    width: 22.5%;
+                    padding-left: rem($gutter/2);
+                    padding-right: rem($gutter/2);
+                }
+
+                &:nth-child(3) {
+                    width: 22.5%;
+                    padding-left: rem($gutter/2);
+                    padding-right: rem($gutter/2);
+                }
+
+                &:nth-child(4) {
+                    width: 22.5%;
+                    padding-left: rem($gutter/2);
+                }
+            }
+            @include mq("mobile-landscape"){
+                width: 100%;
+            }
+        }
+    }
+
+    &-20_80 {
+        @extend %st-wrap;
+
+        @include bp(sm) {
+            display: flex;
+        }
+
+        .col {
+
+            @include bp(xs) {
+                width: 100%;
+            }
+
+            @include bp(md) {
+
+                &:first-of-type {
+                    width: 20%;
+                    padding-right: rem($gutter * 1.5);
+
+                    @include bp($screen-sm, $screen-md) {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+
+                &:last-of-type {
+                    width: 80%;
+                    padding-left: rem($gutter * 1.5);
+
+                    @include bp($screen-sm, $screen-md) {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+
+                @include bp(xs) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &-30_70 {
+        @extend %st-wrap;
+
+        @include bp(sm) {
+            display: flex;
+        }
+
+        .col {
+
+            @include bp(xs) {
+                width: 100%;
+            }
+
+            @include bp($screen-sm, $screen-md) {
+                width: 45%;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+            }
+
+            @include bp(md) {
+                &:first-of-type {
+                    width: 30%;
+                    padding-right: rem($gutter * 1.5);
+                }
+
+                &:last-of-type {
+                    width: 70%;
+                    padding-left: rem($gutter * 1.5);
+                }
+            }
+        }
+    }
+
+    &-70_30 {
+        @extend %st-wrap;
+
+        @include bp(sm) {
+            display: flex;
+        }
+
+        .col {
+
+            @include bp(xs) {
+                width: 100%;
+            }
+
+            @include bp($screen-sm, $screen-md) {
+                width: 45%;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+            }
+
+            @include bp(md) {
+                &:first-of-type {
+                    width: 70%;
+                    padding-right: rem($gutter * 1.5);
+                }
+
+                &:last-of-type {
+                    width: 30%;
+                    padding-left: rem($gutter * 1.5);
+                }
+            }
+        }
+    }
+
+    &-50 {
+        @extend %st-wrap;
+
+        @include bp(sm) {
+            display: flex;
+        }
+
+        .col {
+
+            // @include bp(xs) {
+            //     width: auto;
+            // }
+
+            @include bp($screen-sm, $screen-md) {
+                width: 45%;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+            }
+
+            @include bp(md) {
+                &:first-of-type {
+                    width: 50%;
+                    padding-right: rem($gutter * 1.5);
+                }
+
+                &:last-of-type {
+                    width: 50%;
+                    padding-left: rem($gutter * 1.5);
+                }
+            }
+            @include mq("mobile-landscape"){
+                width: 100%;
+            }
+        }
+    }
+
+    &-60_40 {
+        @extend %st-wrap;
+
+        @include bp(sm) {
+            display: flex;
+        }
+
+        .col {
+
+            @include bp(xs) {
+                width: 100%;
+            }
+
+            @include bp($screen-sm, $screen-md) {
+                width: 45%;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+            }
+
+            @include bp(md) {
+                &:first-of-type {
+                    width: 60%;
+                    padding-right: rem($gutter * 1.5);
+                }
+
+                &:last-of-type {
+                    width: 40%;
+                    padding-left: rem($gutter * 1.5);
+                }
+            }
+            @include mq("mobile-landscape"){
+                width: 100%;
+            }
+        }
+    }
+
+    &-40_60 {
+        @extend %st-wrap;
+
+        @include bp(sm) {
+            display: flex;
+        }
+
+        .col {
+
+            @include bp(xs) {
+                width: 100%;
+            }
+
+            @include bp($screen-sm, $screen-md) {
+                width: 45%;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+            }
+
+            @include bp(md) {
+
+                &:first-of-type {
+                    width: 40%;
+                    padding-right: rem($gutter * 1.5);
+                }
+
+                &:last-of-type {
+                    width: 60%;
+                    padding-left: rem($gutter * 1.5);
+                }
+            }
+            @include mq("mobile-landscape"){
+                width: 100%;
+            }
+        }
+    }
+
+    &-33 {
+        @extend %st-wrap;
+
+        @include bp(sm) {
+            display: flex;
+        }
+
+        .col {
+
+            @include bp(md) {
+
+                &:nth-child(1) {
+                    width: 33.33%;
+                    padding-right: rem($gutter/2);
+                }
+
+                &:nth-child(2) {
+                    width: 33.33%;
+                    padding-left: rem($gutter/2);
+                    padding-right: rem($gutter/2);
+                }
+
+                &:nth-child(3) {
+                    width: 33.33%;
+                    padding-left: rem($gutter/2);
+                }
+            }
+        }
+    }
+}
+
+.st-wrap {
+    @extend %st-wrap;
+}
+
+.st-wrap-20_80 {
+    @extend %st-wrap-20_80;
+}
+
+.st-wrap-25 {
+    @extend %st-wrap-25;
+}
+
+.st-wrap-70_30 {
+    @extend %st-wrap-70_30;
+}
+
+.st-wrap-30_70 {
+    @extend %st-wrap-30_70;
+}
+
+.st-wrap-50 {
+    @extend %st-wrap-50;
+}
+
+.st-wrap-60_40 {
+    @extend %st-wrap-60_40;
+}
+
+.st-wrap-40_60 {
+    @extend %st-wrap-40_60;
+}
+
+.st-wrap-33 {
+    @extend %st-wrap-33;
+}

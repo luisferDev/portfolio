@@ -1,0 +1,118 @@
+//
+// Mixins
+// ----------------------------------------------------------------------------
+
+// Form Input Placeholder
+// ----------------------------------------------------------------------------
+@mixin placeholder {
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+// Responsive Utilities
+// ----------------------------------------------------------------------------
+@mixin bp($min: 0, $max: 0) {
+    $type: type-of($min);
+    $base: $browser-context;
+
+    @if $type==string {
+        $class: $min;
+
+        @if $class==xs {
+            @media (max-width: $screen-xs-max*1px) {
+                @content;
+            }
+        }
+
+        @else if $class==sm {
+            @media (min-width: $screen-sm*1px) {
+                @content;
+            }
+        }
+
+        @else if $class==md {
+            @media (min-width: $screen-md*1px) {
+                @content;
+            }
+        }
+
+        @else if $class==lg {
+            @media (min-width: $screen-lg*1px) {
+                @content;
+            }
+        }
+
+        @else if $class==xl {
+            @media (min-width: $screen-xl*1px) {
+                @content;
+            }
+        }
+
+        @else {
+            @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+        }
+    }
+
+    @else if $type==number {
+        $query: "all" !default;
+
+        @if $min !=0 and $max !=0 {
+            $min: em($min, $base);
+            $max: em($max, $base);
+            $query: "(min-width: #{$min}) and (max-width: #{$max})";
+        }
+
+        @else if $min !=0 and $max==0 {
+            $min: em($min, $base);
+            $query: "(min-width: #{$min})";
+        }
+
+        @else if $min==0 and $max !=0 {
+            $max: em($max, $base);
+            $query: "(max-width: #{$max})";
+        }
+
+        @media #{$query} {
+            @content;
+        }
+    }
+}
+
+// Landscape mobile
+@mixin mq($breakpoint){
+    @if $breakpoint == "mobile-landscape"{
+        @media only screen and (min-device-width: 320px) and (max-device-width: 823px) and (-webkit-max-device-pixel-ratio: 3) and (orientation: landscape){
+            @content;
+        }
+    }
+}
+
+//transitions mixin
+@mixin transition-mix($property: all, $duration: 0.2s, $timing: linear, $delay: 0s) {
+    transition-property: $property;
+    transition-duration: $duration;
+    transition-timing-function: $timing;
+    transition-delay: $delay;
+  }
+
+  //position absolute mixin
+@mixin position-absolute ($top: null, $left: null, $right: null, $bottom: null) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+  }

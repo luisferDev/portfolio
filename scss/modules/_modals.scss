@@ -1,0 +1,150 @@
+// ----------------------------------------------------------------------------
+// MODALS
+// ----------------------------------------------------------------------------
+div[id^='portfolio'] {
+
+    @include bp(md) {
+        min-width: rem(900);
+        height: auto;
+        transform: scale(0.8);
+    }
+
+    @include bp(xl) {
+        transform: none;
+    }
+
+    // MODAL
+    // ----------------------------------------------------------
+
+    &.modal {
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+
+        @extend .fadeIn;
+        animation-duration: 0.5s;
+
+        &.piezas-multi {
+
+            @include bp($screen-sm, $screen-md) {
+                max-width: rem(650);
+                transform: translateY(rem(60));
+            }
+
+            @include bp(xs) {
+                transform: translateY(rem(100));
+            }
+        }
+
+        @media (max-width: 375px) {
+            transform: translateY(9%);
+        }
+    }
+
+    // Box contenido
+    // ----------------------------------------------------------
+    .modal-content {
+
+        background-color: $grey-lightest;
+
+        // Anulo poercentaje para secciones internas del modal Tablet
+        // --------------------------------------------------------------
+        [class^='st-wrap'] .col {
+            @include bp($screen-sm, $screen-md) {
+                width: 100%;
+            }
+        }
+
+        figure {
+            img {
+                width: 100%;
+                object-fit: contain;
+
+                // @include bp(md) {
+                //     height: rem(450);
+                // }
+            }
+        }
+
+        object {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: rem(20) auto;
+            padding: 0;
+            box-shadow: $box-shadow;
+
+            @media (max-width: 320px) {
+                transform: scale(0.95) translate(-6px, -15px);
+            }
+        }
+
+        // Detalle Copy
+        // ----------------------------------------------------------
+        .modal-info {
+            padding: rem($gutter*2) rem($gutter*2) rem($gutter);
+            background-color: $grey-lightest;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+// Landing EspaiVisual
+// ----------------------------------------------------------
+#portfolio5 .modal-content {
+
+    @include bp(sm) {
+        padding: rem(50);
+    }
+}
+
+// Anulo padding Clase de lightbox de Bootstrap
+// ----------------------------------------------------------
+.blocker {
+    padding: 0 !important;
+}
+
+// Sobreescribo Efecto Hover Modals | IHover
+// ----------------------------------------------------------
+
+.overrides-style.ih-item {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+
+    @include bp($screen-sm, $screen-md) {
+        width: 50%;
+    }
+
+    &.square {
+
+        .info {
+            background-color: $primary-color;
+            min-height: rem(85);
+
+            h3 {
+                text-transform: none;
+                font-size: rem(20);
+            }
+
+            p {
+                color: $white;
+                font-size: rem(14);
+                font-style: normal;
+                font-weight: 300;
+                padding: 0;
+                margin-top: rem(5);
+            }
+        }
+
+        &.colored {
+            .info {
+                background-color: $secondary-color;
+            }
+        }
+    }
+}

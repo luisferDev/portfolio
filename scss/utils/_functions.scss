@@ -1,0 +1,34 @@
+//
+// Functions
+// ----------------------------------------------------------------------------
+
+// Unitless function to convert px to em
+@function em($pixels, $context: $browser-context) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+
+    @return $pixels / $context * 1em;
+}
+
+// Unitless function to convert px to rem
+@function rem($pixels, $context: $browser-context) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+
+    @return $pixels / $context * 1rem;
+}
+
+// Return z-index layer
+@function z($layer) {
+    @return map-get($z-layers, $layer);
+}

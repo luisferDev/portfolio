@@ -1,0 +1,76 @@
+// ----------------------------------------------------------------------------
+// FOOTER
+// ----------------------------------------------------------------------------
+footer {
+    width: 100%;
+    height: auto;
+    background-color: $grey-lightest;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: rem(60);
+    text-align: center;
+
+    @include bp(sm) {
+        padding-top: rem($gutter * 4);
+        padding-bottom: rem(40);
+    }
+
+    h2 {
+        margin-bottom: rem($gutter * 2);
+    }
+
+    // Contenido + CTA
+    // ----------------------------------------------------------
+    .contact-content {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        @include bp(sm) {
+            width: rem(600);
+        }
+
+        .contact-ico {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        // Enlaces Contactos | Mail & Linkedin
+        // ----------------------------------------------------------
+        a {
+            display: flex;
+            width: rem(40);
+            height: rem(40);
+            padding: rem(20);
+            background-color: $primary-color;
+            margin-left: rem($gutter);
+            margin-right: rem($gutter);
+            border-radius: 50%;
+
+            &.ico-linkedin,
+            &.ico-email {
+                img {
+                    object-fit: contain;
+                }
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                border-color: $btn-dark-color !important;
+                background-color: $btn-dark-color !important;
+            }
+        }
+    }
+
+    .contact-legal {
+        padding-top: rem($gutter * 1.5);
+
+        p {
+            font-size: rem(14);
+            text-align: center;
+        }
+    }
+}

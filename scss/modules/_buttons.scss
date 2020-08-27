@@ -1,0 +1,158 @@
+// ----------------------------------------------------------------------------
+// BUTTONS
+// ----------------------------------------------------------------------------
+%btn {
+    width: fit-content;
+    display: inline-block;
+    padding: rem(15) rem(25);
+    margin-top: rem($gutter*2);
+
+    @include bp(xs) {
+        margin-top: rem(10);
+    }
+
+    appearance: none;
+    border: 1px solid transparent;
+    border-radius: rem(3);
+    cursor: pointer;
+    font-family: $subs-font;
+    font-size: rem(15);
+
+    @include bp(xs) {
+        font-size: rem(15);
+        letter-spacing: rem(0.73);
+    }
+    font-weight: 400;
+    letter-spacing: rem(1.43);
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-decoration: none;
+    vertical-align: middle;
+    position: relative;
+    box-shadow: inset 0 0 rem(10) rem(5) rgba(0, 0, 0, 0.1) !important;
+    transition: all .3s;
+}
+
+%btn--main {
+    color: $black;
+    border: transparent;
+    background-color: $secondary-color;
+    box-shadow: inset 0 0 rem(10) rem(5) rgba(0, 0, 0, 0.1) !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: transparent;
+        background-color: $btn-dark-color;
+        color: $white;
+    }
+}
+
+%btn--border {
+    border: 1px solid $white;
+    background-color: transparent;
+    color: $white;
+
+    &:before {
+        background: $white;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $primary-color;
+        background-color: $primary-color;
+        color: $white;
+    }
+}
+
+%btn--border--inv {
+    background: transparent;
+    color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $primary-color;
+        background-color: $primary-color !important;
+        color: $white;
+    }
+}
+
+%btn--inv {
+
+    background-color: transparent;
+    border-color: transparent;
+    color: $primary-color;
+
+    &:before {
+        background: $primary-color;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $primary-color;
+        color: white;
+    }
+}
+
+%btn--border--black {
+    background: $grey-darker;
+    color: $white;
+    border-color: $grey-darker;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $primary-color;
+        background-color: $primary-color !important;
+        color: $white;
+    }
+}
+
+%btn--main_inverse {
+    color: $white;
+    background-color: $primary-color !important;
+    border-color: $primary-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        border-color: $btn-dark-color !important;
+        background-color: $btn-dark-color !important;
+    }
+}
+
+
+button.btn,
+a.btn,
+input.btn {
+    @extend %btn;
+
+    &--main {
+        @extend %btn--main;
+    }
+
+    &--border {
+        @extend %btn--border;
+    }
+
+    &--border--inv {
+        @extend %btn--border--inv;
+    }
+
+    &--border--black {
+        @extend %btn--border--black;
+    }
+
+    &--inv {
+        @extend %btn--inv;
+    }
+
+    &--main_inverse {
+        @extend %btn--main_inverse;
+    }
+}
